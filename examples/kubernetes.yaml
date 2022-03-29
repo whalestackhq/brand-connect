@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: checkout-proxy
+spec:
+  selector:
+    matchLabels:
+      run: checkout-proxy
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: checkout-proxy
+    spec:
+      containers:
+        - name: checkout-proxy
+          image: coinqvest/checkout-proxy:latest
+          env:
+            - name: CQKEY
+              value: "demo"
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: checkout-proxy
+  labels:
+    run: checkout-proxy
+spec:
+  selector:
+    run: checkout-proxy
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: checkout-proxy
+spec:
+  rules:
+    - host: "coinqvest.k8s.sui.li"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: checkout-proxy
+                port:
+                  number: 80
