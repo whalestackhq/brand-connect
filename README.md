@@ -28,4 +28,4 @@ docker run -p 80:80 -e CQKEY=demo coinqvest/checkout-proxy:latest
 ```
 
 ### Kubernetes 
-The configuration file in examples/kubernetes.yaml shows an example setup without SSL, you'll need to terminate SSL in your ingress depending on your environment.   
+The configuration file in examples/kubernetes.yaml shows a very basic example setup without SSL, you'll need to terminate SSL in your ingress depending on your environment.   
