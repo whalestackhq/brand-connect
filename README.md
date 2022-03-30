@@ -5,7 +5,7 @@
 The checkout-proxy binds to container port https/443 and http/80. You may use your own SSL certificate by mounting it to `/ssl.pem`, otherwise https will be served with an invalid dummy certificate.  
 
 
-####Environment variables:
+#### Environment variables:
 
 `CQKEY` Your personal token provided by Coinqvest, which is used to customize to your checkout pages.
 
