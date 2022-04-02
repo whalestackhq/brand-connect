@@ -7,24 +7,24 @@ The checkout-proxy binds to container port https/443 and http/80. You may use yo
 
 #### Environment variables:
 
-`CQKEY` Your personal token provided by Coinqvest, which is used to customize to your checkout pages.
+`CQ_BRANDING_KEY` Your personal token provided by Coinqvest, which is used to customize to your checkout pages.
 
 
 ## Examples
 
 ### Run with an invalid SSL certificate
 ```
-docker run -p 443:443 -e CQKEY=demo coinqvest/checkout-proxy:latest
+docker run -p 443:443 -e CQ_BRANDING_KEY=demo coinqvest/checkout-proxy:latest
 ```
 
 ### Run with your own SSL certificate 
 ```
-docker run -v /path/to/ssl.pem:/ssl.pem -p 443:443 -e CQKEY=demo coinqvest/checkout-proxy:latest
+docker run -v /path/to/ssl.pem:/ssl.pem -p 443:443 -e CQ_BRANDING_KEY=demo coinqvest/checkout-proxy:latest
 ```
 
 ### Run without SSL
 ```
-docker run -p 80:80 -e CQKEY=demo coinqvest/checkout-proxy:latest
+docker run -p 80:80 -e CQ_BRANDING_KEY=demo coinqvest/checkout-proxy:latest
 ```
 
 ### Kubernetes 

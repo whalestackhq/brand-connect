@@ -16,7 +16,7 @@ spec:
         - name: checkout-proxy
           image: coinqvest/checkout-proxy:latest
           env:
-            - name: CQKEY
+            - name: CQ_BRANDING_KEY
               value: "demo"
 
 ---
