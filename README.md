@@ -16,17 +16,17 @@ The container binds port https/443 and http/80. You may use your own SSL certifi
 
 ### Run with an invalid SSL certificate
 ```
-docker run -p 443:443 -e CQ_BRANDING_KEY=demo coinqvest/checkout-proxy:latest
+docker run -p 443:443 -e CQ_BRANDING_KEY=demo coinqvest/brand-connect:latest
 ```
 
 ### Run with your own SSL certificate 
 ```
-docker run -v /path/to/ssl.pem:/ssl.pem -p 443:443 -e CQ_BRANDING_KEY=demo coinqvest/checkout-proxy:latest
+docker run -v /path/to/ssl.pem:/ssl.pem -p 443:443 -e CQ_BRANDING_KEY=demo coinqvest/brand-connect:latest
 ```
 
 ### Run without SSL
 ```
-docker run -p 80:80 -e CQ_BRANDING_KEY=demo coinqvest/checkout-proxy:latest
+docker run -p 80:80 -e CQ_BRANDING_KEY=demo coinqvest/brand-connect:latest
 ```
 
 ### Kubernetes 
