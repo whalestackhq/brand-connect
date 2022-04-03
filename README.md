@@ -1,6 +1,6 @@
 # brand-connect
 
-Connects your brand to hosted checkout pages and serves requests under your own domain.
+Connects your brand to hosted checkout pages and serves payment UIs under your own domain.
 
 ## Configuration
 
