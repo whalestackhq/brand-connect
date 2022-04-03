@@ -1,8 +1,10 @@
-# checkout-proxy
+# brand-connect
+
+Connects your brand to hosted checkout pages and serves requests under your own domain.
 
 ## Configuration
 
-The checkout-proxy binds to container port https/443 and http/80. You may use your own SSL certificate by mounting it to `/ssl.pem`, otherwise https will be served with an invalid dummy certificate.  
+The container binds port https/443 and http/80. You may use your own SSL certificate by mounting it to `/ssl.pem`, otherwise https will be served with an invalid dummy certificate.  
 
 
 #### Environment variables:
