@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: checkout-proxy
+  name: brand-connect
 spec:
   selector:
     matchLabels:
-      run: checkout-proxy
+      run: brand-connect
   replicas: 1
   template:
     metadata:
       labels:
-        run: checkout-proxy
+        run: brand-connect
     spec:
       containers:
-        - name: checkout-proxy
-          image: coinqvest/checkout-proxy:latest
+        - name: brand-connect
+          image: coinqvest/brand-connect:latest
           env:
             - name: CQ_BRANDING_KEY
               value: "demo"
@@ -24,12 +24,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: checkout-proxy
+  name: brand-connect
   labels:
-    run: checkout-proxy
+    run: brand-connect
 spec:
   selector:
-    run: checkout-proxy
+    run: brand-connect
   ports:
     - name: http
       port: 80
@@ -40,7 +40,7 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: checkout-proxy
+  name: brand-connect
 spec:
   rules:
     - host: "coinqvest.k8s.sui.li"
@@ -50,6 +50,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: checkout-proxy
+                name: brand-connect
                 port:
                   number: 80
