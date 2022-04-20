@@ -3,7 +3,7 @@ FROM haproxy
 USER root
 
 RUN apt-get update
-RUN apt-get install ca-certificates libcap2-bin -y
+RUN apt-get install ca-certificates libcap2-bin dos2unix -y
 RUN setcap 'cap_net_bind_service=+ep' /usr/local/sbin/haproxy
 
 COPY entrypoint.sh /tmp/entrypoint.sh
