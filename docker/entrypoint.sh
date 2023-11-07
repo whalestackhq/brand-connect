@@ -1,3 +1,3 @@
 #!/bin/sh
-CQ_BRANDING_KEY="${CQ_BRANDING_KEY:-undefined}"
-sed -i "s!{{CQ_BRANDING_KEY}}!${CQ_BRANDING_KEY}!g" /usr/local/etc/haproxy/haproxy.cfg
+WS_BRANDING_KEY="${WS_BRANDING_KEY:-undefined}"
+sed -i "s!{{WS_BRANDING_KEY}}!${WS_BRANDING_KEY}!g" /usr/local/etc/haproxy/haproxy.cfg
