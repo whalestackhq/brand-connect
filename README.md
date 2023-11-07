@@ -7,7 +7,7 @@ Connects your brand to hosted checkout pages and serves COINQVEST payment UIs un
 ## Pre-Requisites
 
 * Enable and configure Brand Connect in your [account settings](https://www.coinqvest.com/en/account-settings#brandingConfigs) 
-* Obtain your `CQ_BRANDING_KEY` by enabling Brand Connect (see step above)
+* Obtain your `WS_BRANDING_KEY` by enabling Brand Connect (see step above)
 * Apply behavior setting 1 or 2 during initial setup and specify your desired "custom web domain"
 
 ## Configuration
@@ -18,19 +18,19 @@ Activate Brand Connect by pointing the "custom web domain" specified in your [ac
 
 #### Environment variables:
 
-`CQ_BRANDING_KEY` Your branding key as given by COINQVEST (see your [account settings](https://www.coinqvest.com/en/account-settings#brandingConfigs)).
+`WS_BRANDING_KEY` Your branding key as given by COINQVEST (see your [account settings](https://www.coinqvest.com/en/account-settings#brandingConfigs)).
 
 
 ## Examples
 
 ### Run with an invalid SSL certificate
 ```
-docker run -p 443:443 -e CQ_BRANDING_KEY=demo coinqvest/brand-connect:latest
+docker run -p 443:443 -e WS_BRANDING_KEY=demo coinqvest/brand-connect:latest
 ```
 
 ### Run with your own SSL certificate 
 ```
-docker run -v /path/to/ssl.pem:/ssl.pem -p 443:443 -e CQ_BRANDING_KEY=demo coinqvest/brand-connect:latest
+docker run -v /path/to/ssl.pem:/ssl.pem -p 443:443 -e WS_BRANDING_KEY=demo coinqvest/brand-connect:latest
 ```
 
 ### Run without SSL
