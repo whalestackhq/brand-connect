@@ -16,7 +16,7 @@ spec:
         - name: brand-connect
           image: coinqvest/brand-connect:latest
           env:
-            - name: CQ_BRANDING_KEY
+            - name: WS_BRANDING_KEY
               value: "demo"
 
 ---
